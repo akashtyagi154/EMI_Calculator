@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import math
-import plotly.express as px
+# import plotly.express as px
 
 
 ## emi(p,r,t)
@@ -121,13 +121,13 @@ if menu == "Calculate EMI":
     emi_amt.metric("EMI amount",x)
     loan_amt.metric("Total Repayment Amount", round(x*t*12,2))
     tot_int.metric("Total Interest", round(y.iloc[:,2].sum()))
-    piedf = pd.DataFrame({'Total Repayment Amount':['Loan Amount','Interest'],round(x*t*12,2):[p,round(y.iloc[:,2].sum())]})
-    fig_pie = px.pie(piedf,names = 'Total Repayment Amount',values=round(x*t*12,2),labels=round(x*t*12,2))
-    st.plotly_chart(fig_pie)
+    # piedf = pd.DataFrame({'Total Repayment Amount':['Loan Amount','Interest'],round(x*t*12,2):[p,round(y.iloc[:,2].sum())]})
+    # fig_pie = px.pie(piedf,names = 'Total Repayment Amount',values=round(x*t*12,2),labels=round(x*t*12,2))
+    # st.plotly_chart(fig_pie)
 
-    pltdf = y[['Month','Interest','Principal']].melt(id_vars=['Month'],value_name='EMI Amount',value_vars=['Interest','Principal'],var_name='Interest & Principal')
-    fig = px.bar(pltdf, x='Month', y='EMI Amount',color='Interest & Principal')
-    st.plotly_chart(fig)
+    # pltdf = y[['Month','Interest','Principal']].melt(id_vars=['Month'],value_name='EMI Amount',value_vars=['Interest','Principal'],var_name='Interest & Principal')
+    # fig = px.bar(pltdf, x='Month', y='EMI Amount',color='Interest & Principal')
+    # st.plotly_chart(fig)
 
 
     installment_sheet = st.expander("Amortization plan")
@@ -177,13 +177,13 @@ if menu == "Calculate Max Loan Amount":
     loan_amt.metric("Total Repayment Amount", round(x1*te*12,2))
     tot_int.metric("Total Interest", round(y1.iloc[:,2].sum()))
 
-    piedf1 = pd.DataFrame({'Total Repayment Amount':['Loan Amount','Interest'],round(x1*te*12,2):[z,round(y1.iloc[:,2].sum())]})
-    fig_pie1 = px.pie(piedf1,names = 'Total Repayment Amount',values=round(x1*te*12,2),labels=round(x1*te*12,2))
-    st.plotly_chart(fig_pie1)
+    # piedf1 = pd.DataFrame({'Total Repayment Amount':['Loan Amount','Interest'],round(x1*te*12,2):[z,round(y1.iloc[:,2].sum())]})
+    # fig_pie1 = px.pie(piedf1,names = 'Total Repayment Amount',values=round(x1*te*12,2),labels=round(x1*te*12,2))
+    # st.plotly_chart(fig_pie1)
 
-    pltdf1 = y1[['Month','Interest','Principal']].melt(id_vars=['Month'],value_name='EMI Amount',value_vars=['Interest','Principal'],var_name='Interest & Principal')
-    fig1 = px.bar(pltdf1, x='Month', y='EMI Amount',color='Interest & Principal')
-    st.plotly_chart(fig1)
+    # pltdf1 = y1[['Month','Interest','Principal']].melt(id_vars=['Month'],value_name='EMI Amount',value_vars=['Interest','Principal'],var_name='Interest & Principal')
+    # fig1 = px.bar(pltdf1, x='Month', y='EMI Amount',color='Interest & Principal')
+    # st.plotly_chart(fig1)
 
 
     installment_sheet = st.expander("Amortization plan")
