@@ -1,4 +1,6 @@
 streamlit==0.88.0
+protobuf==3.18.0rc2
+altair==4.1.0
 matplotlib==3.4.3
 
 numpy==1.21.2
